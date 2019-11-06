@@ -45,11 +45,11 @@
                         <span>密　码：</span>
                         <asp:TextBox  ID="password" runat="server" Width="198" TextMode="Password"></asp:TextBox>
                     </div>
-                    <div class="login_code">
+                    <%--<div class="login_code">
                         <span>验证码：</span>
                         <input name="code" type="text" class="input" id="code" style="width:50px;" maxlength="4" autocomplete="off" runat="server" />
                         <img alt="" src="../Control/validate.aspx" id="getcode_img" title="看不清请点击！" />
-                    </div>
+                    </div>--%>
                     <div class="login_button">
                         <asp:Button  runat="server" id="submit" style="margin:auto;" onclick="submit_login" />&nbsp;&nbsp;
                         <input type="reset" name="reset" id="reset" style="margin:auto;" value="" onclick="doReset();" />

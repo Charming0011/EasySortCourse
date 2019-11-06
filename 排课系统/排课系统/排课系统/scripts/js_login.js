@@ -2,7 +2,7 @@
     //alert("5");
     var admin_uname = $("#username").val();
     var admin_psw = $("#password").val();
-    var admin_yzm=$("#code").val();
+    //var admin_yzm=$("#code").val();
     if(admin_uname==""){
         alert("请输入您用户账号！");
         $("#username").focus();
@@ -13,16 +13,16 @@
         $("#password").focus();
         return false
     }
-    if(admin_yzm==""){
-        alert("验证码不能为空！");
-        $("#code").focus();
-        return false
-    }
-    if(document.getElementById("code").value.length!=4){
-        alert("您输入的验证码不合理！");
-        $("#code").select();
-        return false
-    }
+    //if(admin_yzm==""){
+    //    alert("验证码不能为空！");
+    //    $("#code").focus();
+    //    return false
+    //}
+    //if(document.getElementById("code").value.length!=4){
+    //    alert("您输入的验证码不合理！");
+    //    $("#code").select();
+    //    return false
+    //}
     $.ajax({
         type: "get",
         url: "/Account/Login.aspx?paramName=" + escape(admin_uname) + "&paramPwd=" + admin_psw + "&validate=" + admin_yzm,
@@ -32,36 +32,36 @@
             var returnval=arr[0].toString();
             var tip=arr[1].toString();
             
-            if(returnval=="15")
-            {
-                $("#msg_tip").text(tip);
-                document.getElementById("code").value="";
-                $("#code").focus();
-                ShowValidImage();
-                return false;
-            }
+            //if(returnval=="15")
+            //{
+            //    $("#msg_tip").text(tip);
+            //    document.getElementById("code").value="";
+            //    $("#code").focus();
+            //    ShowValidImage();
+            //    return false;
+            //}
             if(returnval=="3")
             {
                 $("#msg_tip").text(tip);
                 document.getElementById("username").value = "";
                 document.getElementById("password").value="";
-                ShowValidImage();
+                //ShowValidImage();
                 return false;
             }
             else if(returnval=="9")
             {
                 $("#msg_tip").text(tip);
                 document.getElementById("username").select();
-                document.getElementById("code").value="";
-                ShowValidImage();
+                //document.getElementById("code").value="";
+                //ShowValidImage();
                 return false;
             }
             else if(returnval=="14")
             {
                 $("#msg_tip").text(tip);
                 document.getElementById("username").select();
-                document.getElementById("code").value="";
-                ShowValidImage();
+                //document.getElementById("code").value="";
+                //ShowValidImage();
                 return false;
             }
             else if(returnval=="20" || returnval=="30")
@@ -69,7 +69,7 @@
                 $("#msg_tip").text(tip);
                 document.getElementById("username").value = "";
                 document.getElementById("password").value="";
-                document.getElementById("code").value="";
+                //document.getElementById("code").value="";
                 document.getElementById("username").focus();
                 return false;
             }
