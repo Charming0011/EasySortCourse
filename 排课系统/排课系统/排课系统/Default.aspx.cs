@@ -27,16 +27,18 @@ namespace 排课系统
             {
                 WebMessageBox.Show("密码不能为空"); return;
             }
+            /*
             if (this.code.Value.Length < 1)
             {
                 WebMessageBox.Show("验证码不能为空"); return;
             }
+
             String num = Session["LVNum"].ToString();
             if (!num.Equals(this.code.Value))
             {
                 WebMessageBox.Show("验证码输入错误"); return;
             }
-
+            */
             if (RadioButton2.Checked)  //管理员
             {
                 if (Operation.getDatatable("select * from t_admin where username='" + this.username.Text + "' and userpwd='" + this.password.Text + "'").Rows.Count < 1)
