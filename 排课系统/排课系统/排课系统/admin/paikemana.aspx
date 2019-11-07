@@ -69,7 +69,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.aspx">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">专业管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="index.aspx">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">排课管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
@@ -80,12 +80,12 @@
                                     style="margin:auto;" onclick="Button1_Click" ToolTip="自动排课需要写时间..." /></td>
                             <th width="50"></th>
                             <th width="120">未排课关键字:</th>
-                            <td><asp:TextBox class="common-text" placeholder="未排课关键字" ID="findinfo" runat="server" Type="text"></asp:TextBox></td>
+                            <td><asp:TextBox class="common-text" placeholder="请输入要查询课程名" ID="findinfo" runat="server" Type="text"></asp:TextBox></td>
                             <td >
                                 <asp:Button ID="Button3" class="btn btn-success btn2" runat="server" Text="查询" 
                                     style="margin:auto;" onclick="Button3_Click"   /></td>
                             <th width="120">已排课关键字:</th>
-                            <td><asp:TextBox class="common-text" placeholder="已排课关键字" ID="findinfo1" runat="server" Type="text"></asp:TextBox></td>
+                            <td><asp:TextBox class="common-text" placeholder="请输入要查询课程名" ID="findinfo1" runat="server" Type="text"></asp:TextBox></td>
                             <td><asp:Button ID="Button2" class="btn btn-default btn2" runat="server" Text="查询" 
                                     style="margin:auto;" onclick="Button2_Click"  /></td>
                         </tr>
