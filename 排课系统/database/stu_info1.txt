@@ -1,0 +1,94 @@
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016001,'李赣','电子科学与技术',2016,2016001)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016002,'蒋灵川','电子科学与技术',2016,2016002)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016003,'阿布多','电子信息工程',2016,2016003)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016004,'陈毅','电子信息工程',2016,2016004)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016005,'张顺飞','电子信息工程（卓越）',2016,2016005)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016006,'冯雪娟','通信工程',2016,2016006)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016007,'王雷','通信工程（卓越）',2016,2016007)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016008,'张贾瑞','微电子科学与工程',2016,2016008)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016009,'李憨憨','微电子学',2016,2016009)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016010,'张顺德','信息对抗技术',2016,2016010)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016011,'王宝器','土木工程',2016,2016011)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016012,'耶和华','软件工程',2016,2016012)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2016013,'特朗普','工商管理',2016,2016013)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017001,'秦傲明','软件工程',2017,2017001)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017002,'陈石头','电子科学与技术',2017,2017002)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017003,'刘洋','电子信息工程',2017,2017003)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017004,'张菲菲','电子信息工程（卓越）',2017,2017004)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017005,'黄诗诗','通信工程',2017,2017005)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017006,'刘丽丽','通信工程（卓越）',2017,2017006)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017007,'马飞','微电子科学与工程',2017,2017007)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017008,'卢本伟','微电子学',2017,2017008)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017009,'李好','信息对抗技术',2017,2017009)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017010,'王思聪','工商管理',2017,2017010)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2017011,'王健林','土木工程',2017,2017011)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018001,'许家印','电子科学与技术',2018,2018001)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018002,'马龙','电子信息工程',2018,2018002)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018003,'任丁丁','电子信息工程（卓越）',2018,2018003)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018004,'汪体德','通信工程',2018,2018004)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018005,'李嘉诚','通信工程（卓越）',2018,2018005)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018006,'陈世美','微电子科学与工程',2018,2018006)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018007,'马化腾','微电子学',2018,2018007)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018008,'马云','信息对抗与技术',2018,2018008)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018009,'郭芙蓉','土木工程',2018,2018009)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018010,'陈新','软件工程',2018,2018010)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2018011,'李白','工商管理',2018,2018011)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019001,'撒贝宁','电子科学与技术',2019,2019001)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019002,'张汉','电子信息工程',2019,2019002)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019003,'王斌','电子信息工程（卓越）',2019,2019003)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019004,'李牧','通信工程',2019,2019004)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019005,'欧阳克宇','通信工程（卓越）',2019,2019005)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019006,'程韵韵','微电子科学与工程',2019,2019006)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019007,'吴赛宇','微电子学',2019,2019007)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019008,'赵一罗','信息对抗与技术',2019,2019008)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019009,'税宇航','土木工程',2019,2019009)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019010,'王力','软件工程',2019,2019010)
+go
+INSERT [dbo].[t_student] ( [stuid], [stuname], [major], [grade], [stupwd]) values(2019011,'刘洋洋','工商管理',2019,2019011)
+go
+
+
