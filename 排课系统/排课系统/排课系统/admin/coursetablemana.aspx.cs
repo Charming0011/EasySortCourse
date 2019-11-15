@@ -38,13 +38,13 @@ namespace 排课系统.admin
 
                 Label1.Text = Session["username"].ToString();
 
-                DataTable dt1 = Operation.getDatatable("select DISTINCT major from t_coursetask");
-                DropDownList1.DataSource = dt1;//设置数据源
+                DataTable dataTable1 = Operation.getDatatable("select DISTINCT major from t_coursetask");
+                DropDownList1.DataSource = dataTable1;//设置数据源
                 DropDownList1.DataTextField = "major";//设置所要读取的数据表里的列名
                 DropDownList1.DataBind();//数据绑定
 
-                DataTable dt2 = Operation.getDatatable("select DISTINCT grade from t_coursetask");
-                DropDownList2.DataSource = dt2;//设置数据源
+                DataTable dataTable2 = Operation.getDatatable("select DISTINCT grade from t_coursetask");
+                DropDownList2.DataSource = dataTable2;//设置数据源
                 DropDownList2.DataTextField = "grade";//设置所要读取的数据表里的列名
                 DropDownList2.DataBind();//数据绑定
                 //绑定
@@ -92,8 +92,8 @@ namespace 排课系统.admin
                 for (int j = 0; j < 4; j++)
                 {
                     DataRow r = dt.NewRow();
-                    r[0] = xingqi[i];
-                    r[1]=jieci[j];
+                    r[0] = week[i];
+                    r[1]=course[j];
                     r[2]=temp[i * 4 + j];
                     dt.Rows.Add(r);
                 }
@@ -140,8 +140,8 @@ namespace 排课系统.admin
 
         }
 
-        string[] jieci = new string[4] { "1,2", "3,4", "5,6" ,"7,8"};
-        string[] xingqi = new string[7] { "一","二","三","四","五","六","日"};
+        string[] course = new string[4] { "1,2", "3,4", "5,6" ,"7,8"};
+        string[] week = new string[7] { "一","二","三","四","五","六","日"};
         //查询
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -257,8 +257,8 @@ namespace 排课系统.admin
                 for (int j = 0; j < 4; j++)
                 {
                     DataRow r = dt.NewRow();
-                    r[0] = xingqi[i];
-                    r[1] = jieci[j];
+                    r[0] = week[i];
+                    r[1] = course[j];
                     r[2] = temp[i * 4 + j];
                     dt.Rows.Add(r);
                 }

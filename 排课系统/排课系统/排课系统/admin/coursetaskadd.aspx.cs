@@ -29,8 +29,10 @@ namespace 排课系统.admin
                 DropDownList2.Items.Add("2014");
                 DropDownList2.Items.Add("2015");
                 DropDownList2.Items.Add("2016");
-                DropDownList3.Items.Add("否"); DropDownList3.Items.Add("是");
-                DropDownList4.Items.Add("否"); DropDownList4.Items.Add("是");
+                DropDownList3.Items.Add("否");
+                DropDownList3.Items.Add("是");
+                DropDownList4.Items.Add("否");
+                DropDownList4.Items.Add("是");
             }
         }
 
@@ -57,46 +59,46 @@ namespace 排课系统.admin
             {
                 WebMessageBox.Show("请输入考核方式"); return;
             }
-            float xf;
-            if (!float.TryParse(TextBox4.Text,out xf))
+            float courseCapacity;
+            if (!float.TryParse(TextBox4.Text,out courseCapacity))
             {
                 WebMessageBox.Show("请输入有效的课程容量"); return;
             }
-            int tt=0,tt1=0,tt2=0;
-            if (!int.TryParse(TextBox5.Text,out tt))
+            int ttotalTimet=0,eftTime=0,eftTime2=0;
+            if (!int.TryParse(TextBox5.Text,out ttotalTimet))
             {
                 WebMessageBox.Show("请输入有效的总学时"); return;
             }
-            if (TextBox6.Text != "" && !int.TryParse(TextBox6.Text, out tt1))
+            if (TextBox6.Text != "" && !int.TryParse(TextBox6.Text, out eftTime))
             {
                 WebMessageBox.Show("请输入有效的讲授学时"); return;
             }
-            if (TextBox7.Text != "" && !int.TryParse(TextBox7.Text, out tt2))
+            if (TextBox7.Text != "" && !int.TryParse(TextBox7.Text, out eftTime2))
             {
                 WebMessageBox.Show("请输入有效的讲授学时"); return;
             }
-            if (tt2+tt1 > tt)
+            if (eftTime2+eftTime > ttotalTimet)
             {
                 WebMessageBox.Show("总学时需要大于讲授学时与实验学时之和"); return;
             }
-            tt = 0; tt1 = 0; tt2 = 0;
-            if (!int.TryParse(TextBox8.Text, out tt))
+            ttotalTimet = 0; eftTime = 0; eftTime2 = 0;
+            if (!int.TryParse(TextBox8.Text, out ttotalTimet))
             {
                 WebMessageBox.Show("请输入有效的周总学时"); return;
             }
-            if (TextBox9.Text != "" && !int.TryParse(TextBox9.Text, out tt1))
+            if (TextBox9.Text != "" && !int.TryParse(TextBox9.Text, out eftTime))
             {
                 WebMessageBox.Show("请输入有效的周讲授学时"); return;
             }
-            if (TextBox10.Text != "" && !int.TryParse(TextBox10.Text, out tt2))
+            if (TextBox10.Text != "" && !int.TryParse(TextBox10.Text, out eftTime2))
             {
                 WebMessageBox.Show("请输入有效的周讲授学时"); return;
             }
-            if (tt2 + tt1 > tt)
+            if (eftTime2 + eftTime > ttotalTimet)
             {
                 WebMessageBox.Show("周总学时需要大于周讲授学时与周实验学时之和"); return;
             }
-            if (tt > 10)
+            if (ttotalTimet > 10)
             {
                 WebMessageBox.Show("周总学时太大了，课程安排不来"); return;
             }

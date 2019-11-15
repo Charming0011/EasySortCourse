@@ -30,13 +30,13 @@ namespace 排课系统.admin
 
                 Label1.Text = Session["username"].ToString();
 
-                DataTable dt1 = Operation.getDatatable("select DISTINCT major from t_coursetask");
-                DropDownList1.DataSource = dt1;//设置数据源
+                DataTable dataTable1 = Operation.getDatatable("select DISTINCT major from t_coursetask");
+                DropDownList1.DataSource = dataTable1;//设置数据源
                 DropDownList1.DataTextField = "major";//设置所要读取的数据表里的列名
                 DropDownList1.DataBind();//数据绑定
 
-                DataTable dt2 = Operation.getDatatable("select DISTINCT grade from t_coursetask");
-                DropDownList2.DataSource = dt2;//设置数据源
+                DataTable dataTable2 = Operation.getDatatable("select DISTINCT grade from t_coursetask");
+                DropDownList2.DataSource = dataTable2;//设置数据源
                 DropDownList2.DataTextField = "grade";//设置所要读取的数据表里的列名
                 DropDownList2.DataBind();//数据绑定
                 //绑定
@@ -45,10 +45,10 @@ namespace 排课系统.admin
         }
         public void bind()
         {
-            string sqlstr = "select t_coursetask.*,t1.name as teachnamez,t2.name as teachnamef,t3.name as teachnames from ((t_coursetask left join t_teacher t1 on teachidz=t1.teachid) left join t_teacher t2 on teachidf=t2.teachid) left join t_teacher t3 on teachids=t3.teachid"+
+            string sS = "select t_coursetask.*,t1.name as teachnamez,t2.name as teachnamef,t3.name as teachnames from ((t_coursetask left join t_teacher t1 on teachidz=t1.teachid) left join t_teacher t2 on teachidf=t2.teachid) left join t_teacher t3 on teachids=t3.teachid"+
                 " where (t_coursetask.coursename like '%" + this.findinfo.Text + "%' OR LEN('" + this.findinfo.Text + "')=0) and t_coursetask.major='" +
                DropDownList1.SelectedValue.ToString() + "' and t_coursetask.grade='" + DropDownList2.SelectedValue.ToString() + "'";
-            GridView1.DataSource = Operation.getDatatable(sqlstr);
+            GridView1.DataSource = Operation.getDatatable(sS);
             GridView1.DataKeyNames = new string[] { "id" };//主键
             GridView1.DataBind();
         }
@@ -56,8 +56,8 @@ namespace 排课系统.admin
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string sqlstr = "delete from t_coursetask where id='" + GridView1.DataKeys[e.RowIndex].Value.ToString() + "'";
-            Operation.runSql(sqlstr);
+            string sS = "delete from t_coursetask where id='" + GridView1.DataKeys[e.RowIndex].Value.ToString() + "'";
+            Operation.runSql(sS);
             bind();
         }
 
@@ -81,7 +81,7 @@ namespace 排课系统.admin
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            DataTable dt = null;
+            DataTable dataTable = null;
                 //导入
                 if (FileUpload1.FileName.Length < 1)
                 {
@@ -155,27 +155,27 @@ namespace 排课系统.admin
                         {
                             continue;
                         }
-                        int zhouci1, zhouci2;
-                        if (!int.TryParse(ss[0], out zhouci1) || !int.TryParse(ss[1], out zhouci2))
+                        int week1, week2;
+                        if (!int.TryParse(ss[0], out week1) || !int.TryParse(ss[1], out week2))
                         {
                             continue;
                         }
-                        if (zhouci1 >= zhouci2 || zhouci1 < 1)
+                        if (week1 >= week2 || week1 < 1)
                         {
                             continue;
                         }
                         string teachidz="",teachidf="",teachids="";
-                        dt = Operation.getDatatable("select teachid from t_teacher where name='" + temp[13] + "'");
-                        if(dt.Rows.Count<1) continue;
-                        teachidz=dt.Rows[0]["teachid"].ToString();
+                        dataTable = Operation.getDatatable("select teachid from t_teacher where name='" + temp[13] + "'");
+                        if(dataTable.Rows.Count<1) continue;
+                        teachidz=dataTable.Rows[0]["teachid"].ToString();
 
-                        dt = Operation.getDatatable("select teachid from t_teacher where name='" + temp[16] + "'");
-                        if (dt.Rows.Count >0) 
-                        teachidf = dt.Rows[0]["teachid"].ToString();
+                        dataTable = Operation.getDatatable("select teachid from t_teacher where name='" + temp[16] + "'");
+                        if (dataTable.Rows.Count >0) 
+                        teachidf = dataTable.Rows[0]["teachid"].ToString();
 
-                        dt = Operation.getDatatable("select teachid from t_teacher where name='" + temp[18] + "'");
-                        if (dt.Rows.Count > 0)
-                            teachids = dt.Rows[0]["teachid"].ToString();
+                        dataTable = Operation.getDatatable("select teachid from t_teacher where name='" + temp[18] + "'");
+                        if (dataTable.Rows.Count > 0)
+                            teachids = dataTable.Rows[0]["teachid"].ToString();
 
                         if (Operation.getDatatable("select * from t_coursetask where xuhao='" + temp[0] + "'").Rows.Count > 0) continue;
 

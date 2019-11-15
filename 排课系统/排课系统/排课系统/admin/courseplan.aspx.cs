@@ -32,13 +32,13 @@ namespace 排课系统.admin
 
                 Label1.Text = Session["username"].ToString();
 
-                DataTable dt1 = Operation.getDatatable("select DISTINCT major from t_courseplan");
-                DropDownList1.DataSource = dt1;//设置数据源
+                DataTable dataTable1 = Operation.getDatatable("select DISTINCT major from t_courseplan");
+                DropDownList1.DataSource = dataTable1;//设置数据源
                 DropDownList1.DataTextField = "major";//设置所要读取的数据表里的列名
                 DropDownList1.DataBind();//数据绑定
 
-                DataTable dt2 = Operation.getDatatable("select DISTINCT grade from t_courseplan");
-                DropDownList2.DataSource = dt2;//设置数据源
+                DataTable dataTable2 = Operation.getDatatable("select DISTINCT grade from t_courseplan");
+                DropDownList2.DataSource = dataTable2;//设置数据源
                 DropDownList2.DataTextField = "grade";//设置所要读取的数据表里的列名
                 DropDownList2.DataBind();//数据绑定
                 //绑定
@@ -47,9 +47,9 @@ namespace 排课系统.admin
         }
         public void bind()
         {
-            string sqlstr = "select * from t_courseplan where (coursename like '%" + this.findinfo.Text + "%' OR LEN('" + this.findinfo.Text + "')=0) and major='" +
+            string sS = "select * from t_courseplan where (coursename like '%" + this.findinfo.Text + "%' OR LEN('" + this.findinfo.Text + "')=0) and major='" +
                DropDownList1.SelectedValue.ToString() + "' and grade='" + DropDownList2.SelectedValue.ToString()+"'";
-            GridView1.DataSource = Operation.getDatatable(sqlstr);
+            GridView1.DataSource = Operation.getDatatable(sS);
             GridView1.DataKeyNames = new string[] { "id" };//主键
             GridView1.DataBind();
         }
@@ -62,8 +62,8 @@ namespace 排课系统.admin
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string sqlstr = "delete from t_courseplan where id='" + GridView1.DataKeys[e.RowIndex].Value.ToString() + "'";
-            Operation.runSql(sqlstr);
+            string sS = "delete from t_courseplan where id='" + GridView1.DataKeys[e.RowIndex].Value.ToString() + "'";
+            Operation.runSql(sS);
             bind();
         }
 
@@ -75,27 +75,27 @@ namespace 排课系统.admin
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            float ss;
-            if (!float.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[3].Controls[0])).Text.ToString().Trim(), out ss))
+            float credit;
+            if (!float.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[3].Controls[0])).Text.ToString().Trim(), out credit))
             {
                 WebMessageBox.Show("请输入有效学分"); return;
             }
-            int tt;
-            if (!int.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[4].Controls[0])).Text.ToString().Trim(), out tt))
+            int totalTime;
+            if (!int.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[4].Controls[0])).Text.ToString().Trim(), out totalTime))
             {
                 WebMessageBox.Show("请输入有效总学时"); return;
             }
-            int tt1;
-            if (!int.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[5].Controls[0])).Text.ToString().Trim(), out tt1))
+            int eftTime;
+            if (!int.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[5].Controls[0])).Text.ToString().Trim(), out eftTime))
             {
                 WebMessageBox.Show("请输入有效讲授学时"); return;
             }
-            int tt2;
-            if (!int.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[6].Controls[0])).Text.ToString().Trim(), out tt2))
+            int eftTime2;
+            if (!int.TryParse(((TextBox)(GridView1.Rows[e.RowIndex].Cells[6].Controls[0])).Text.ToString().Trim(), out eftTime2))
             {
                 WebMessageBox.Show("请输入有效实验学时"); return;
             }
-            if (tt1 + tt2 > tt)
+            if (eftTime + eftTime2 > totalTime)
             {
                 WebMessageBox.Show("总学时需要大于讲授学时与实验学时之和"); return;
             }
@@ -141,34 +141,34 @@ namespace 排课系统.admin
                     WebMessageBox.Show("请选择规范化excel文件"); return;
                 }
 
-                IWorkbook workbook = null; FileStream fs = null;
-                ISheet sheet = null;
+                IWorkbook workBook = null; FileStream fileStream = null;
+                ISheet iSheet = null;
 
-                string filepath =Server.MapPath("~//upload//") + FileUpload1.FileName;  //Server.MapPath("~//upload//") +
-                if (File.Exists(filepath))
-                    File.Delete(filepath);
-                FileUpload1.SaveAs(filepath);
+                string filePath =Server.MapPath("~//upload//") + FileUpload1.FileName;  //Server.MapPath("~//upload//") +
+                if (File.Exists(filePath))
+                    File.Delete(filePath);
+                FileUpload1.SaveAs(filePath);
 
-                fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);//new FileStream(fileName, FileMode.Open, FileAccess.Read);
-                if (Path.GetExtension(filepath).ToLower() == ".xlsx") // 2007版本
-                    workbook = new XSSFWorkbook(fs);
-                else if (Path.GetExtension(filepath).ToLower() == ".xls") // 2003版本
-                    workbook = new HSSFWorkbook(fs);
-                if (workbook == null)
+                fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);//new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                if (Path.GetExtension(filePath).ToLower() == ".xlsx") // 2007版本
+                    workBook = new XSSFWorkbook(fileStream);
+                else if (Path.GetExtension(filePath).ToLower() == ".xls") // 2003版本
+                    workBook = new HSSFWorkbook(fileStream);
+                if (workBook == null)
                 {
                     WebMessageBox.Show("导入excel文件失败"); return;
                 }
-                sheet = workbook.GetSheetAt(0);  // 读取sheet
+                iSheet = workBook.GetSheetAt(0);  // 读取sheet
                 int count = 0;
-                if (sheet != null)
+                if (iSheet != null)
                 {
                     string major = "", grade = "", nums = "", temp;  // 记录当前的专业 年级 专业人数
                     //最后一列的标号
-                    int rowCount = sheet.LastRowNum; // 行数
+                    int rowCount = iSheet.LastRowNum; // 行数
                     //WebMessageBox.Show(rowCount.ToString());
                     for (int i = 0; i <= rowCount; ++i)
                     {
-                        IRow row = sheet.GetRow(i);
+                        IRow row = iSheet.GetRow(i);
                         if (row == null) continue; //没有数据的行默认是null　　　　　　　
                         
                         int cellCount = row.LastCellNum;
