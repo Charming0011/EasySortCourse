@@ -27,7 +27,7 @@ namespace 排课系统.admin
             {
                 if (Session["username"] == null)
                 {
-                    WebMessageBox.Show("请登录", "../Default.aspx");
+                    WebMessageBox.Show("请登录", "../NewLogin.aspx");
                 }else
 
                 Label1.Text = Session["username"].ToString();

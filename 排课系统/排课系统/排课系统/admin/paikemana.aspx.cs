@@ -15,7 +15,7 @@ namespace 排课系统.admin
             {
                 if (Session["username"] == null)
                 {
-                    WebMessageBox.Show("请登录", "../Default.aspx");
+                    WebMessageBox.Show("请登录", "../NewLogin.aspx");
                 }
                 Label1.Text = Session["username"].ToString();
 
@@ -39,6 +39,11 @@ namespace 排课系统.admin
             GridView2.DataSource = Operation.getDatatable(sqlstr);
             GridView2.DataKeyNames = new string[] { "keyid" };//主键
             GridView2.DataBind();
+        }
+        public void Del()//删除已排课表
+        {
+            string sql = "delete from t_coursetable";
+            Operation.runSql(sql);
         }
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -69,6 +74,14 @@ namespace 排课系统.admin
         {
             bind1();// 已排课列表查询
         }
+        protected void Button4_Click(object sender,EventArgs e)
+        {
+            Del();//删除已排课表
+            string message = "删除课表成功!";
+            WebMessageBox.Show(message);
+            bind1(); 
+
+        }
 
 
 
@@ -88,16 +101,17 @@ namespace 排课系统.admin
         }
 
         // 判断周次是否合适 zc1为待判断周次 zc2为忙碌周次  如果周次不相交  就是可以排课 那么就返回true
-        private Boolean judgeZhouci(string zc1, string zc2)
+        public Boolean judgeZhouci(string zc1, string zc2)
         {
             int[] zhouci1 = getZhouci(zc1); int[] zhouci2 = getZhouci(zc2);
             if (zhouci1[1] < zhouci2[0] || zhouci1[0] > zhouci2[1])
                 return true;
-            else return false;
+            else
+                return false;
         }
 
         //产生教师时间空闲表
-        private int[,] generalTeachTable(string teachid,string zhouci)
+        public int[,] generalTeachTable(string teachid,string zhouci)
         { 
             //4*5时间空闲表  4节*5天  0表示空闲  1表示不空闲
             int[,] table=new int[4,5];
@@ -137,7 +151,7 @@ namespace 排课系统.admin
             return table;
         }
         //产生专业年级空闲表
-        private int[,] generalMajorTable(string major,string grade,string zhouci)
+        public int[,] generalMajorTable(string major,string grade,string zhouci)
         {
             //4*5时间空闲表  4节*5天  0表示空闲  1表示不空闲
             int[,] table = new int[4, 5];
@@ -176,7 +190,7 @@ namespace 排课系统.admin
         }
 
         //教师空闲表跟专业年级空闲表或操作
-        private int[,] tableOrOperate(int[,] t1,int[,] t2)
+        public int[,] tableOrOperate(int[,] t1,int[,] t2)
         {
             int[,] table = new int[4, 5];
             int i, j;
@@ -197,7 +211,7 @@ namespace 排课系统.admin
         string[] jiepai = { "2", "3", "1", "4" };
 
         // 安排课程 将课程taskid安排在table里面 每周上课time次  成功返回true
-        private Boolean paike(string taskid, int times, int[,] or_table)
+        public Boolean paike(string taskid, int times, int[,] or_table)
         {
             int ii, jj, kk, nn;
             switch (times)  // 根据每周上课次数安排课程 

@@ -76,12 +76,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\Afeedback.aspx" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\style1.css" />
     <Content Include="Fonts\icomoon.eot" />
     <Content Include="Fonts\icomoon.ttf" />
     <Content Include="Fonts\icomoon.woff" />
+    <Content Include="Fonts\fontawesome-webfont.eot" />
+    <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome-webfont.woff" />
+    <Content Include="Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\Web.config.pubxml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,7 +123,6 @@
     <Content Include="css\main.css" />
     <Content Include="css\mylessons.css" />
     <Content Include="css\style.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Fonts\icomoon.dev.svg" />
     <Content Include="Fonts\icomoon.svg" />
     <Content Include="Holding.html" />
@@ -132,6 +142,7 @@
     <Content Include="Images\header_bg.jpg" />
     <Content Include="Images\hs_bg.jpg" />
     <Content Include="Images\huangdian.png" />
+    <Content Include="Images\image.jpg" />
     <Content Include="Images\input_bg.jpg" />
     <Content Include="Images\login_bg.jpg" />
     <Content Include="Images\login_box_bg.jpg" />
@@ -152,10 +163,12 @@
     <Content Include="Images\search_bg.jpg" />
     <Content Include="Images\sj.jpg" />
     <Content Include="Images\tab-thbg.png" />
+    <Content Include="Images\tick.png" />
     <Content Include="Images\top_bg.jpg" />
     <Content Include="Images\top_bg1.jpg" />
     <Content Include="Images\top_img.jpg" />
     <Content Include="Images\top_img_bak.jpg" />
+    <Content Include="NewLogin.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\jquery-1.6.min.js" />
@@ -164,14 +177,27 @@
     <Content Include="scripts\js.js" />
     <Content Include="scripts\js_login.js" />
     <Content Include="scripts\modernizr.min.js" />
+    <Content Include="student\coursetable.aspx" />
+    <Content Include="student\feedback.aspx" />
+    <Content Include="student\index.aspx" />
+    <Content Include="student\information.aspx" />
+    <Content Include="student\updatepwd.aspx" />
     <Content Include="teacher\coursetablemana.aspx" />
     <Content Include="teacher\index.aspx" />
     <Content Include="teacher\info.aspx" />
     <Content Include="teacher\modifypwd.aspx" />
     <Content Include="teacher\paikecodition.aspx" />
+    <Content Include="teacher\Tfeedback.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\Afeedback.aspx.cs">
+      <DependentUpon>Afeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Afeedback.aspx.designer.cs">
+      <DependentUpon>Afeedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\courseplan.aspx.cs">
       <DependentUpon>courseplan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,14 +307,49 @@
       <DependentUpon>validate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="NewLogin.aspx.cs">
+      <DependentUpon>NewLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="NewLogin.aspx.designer.cs">
+      <DependentUpon>NewLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="student\coursetable.aspx.cs">
+      <DependentUpon>coursetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\coursetable.aspx.designer.cs">
+      <DependentUpon>coursetable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\information.aspx.cs">
+      <DependentUpon>information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\information.aspx.designer.cs">
+      <DependentUpon>information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\updatepwd.aspx.cs">
+      <DependentUpon>updatepwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\updatepwd.aspx.designer.cs">
+      <DependentUpon>updatepwd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="teacher\coursetablemana.aspx.cs">
       <DependentUpon>coursetablemana.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,6 +384,13 @@
     </Compile>
     <Compile Include="teacher\paikecodition.aspx.designer.cs">
       <DependentUpon>paikecodition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\Tfeedback.aspx.cs">
+      <DependentUpon>Tfeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\Tfeedback.aspx.designer.cs">
+      <DependentUpon>Tfeedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="util\DataBase.cs" />
     <Compile Include="util\Operation.cs" />

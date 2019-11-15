@@ -15,7 +15,7 @@ namespace 排课系统.teacher
             {
                 if (Session["teachid"] == null)
                 {
-                    WebMessageBox.Show("请登录","../Default.aspx");
+                    WebMessageBox.Show("请登录","../NewLogin.aspx");
                 }
                 Label1.Text ="欢迎您,"+ Session["teachname"].ToString();
                 string sql = "select * from t_teacher where teachid='" + Session["teachid"].ToString()+"'";

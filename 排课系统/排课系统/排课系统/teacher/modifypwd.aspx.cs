@@ -15,14 +15,14 @@ namespace 排课系统.teacher
             {
                 if (Session["teachid"] == null)
                 {
-                    WebMessageBox.Show("请登录", "../Default.aspx");
+                    WebMessageBox.Show("请登录", "../NewLogin.aspx");
                 }
                 Label1.Text = "欢迎您," + Session["teachname"].ToString();
                 
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        public void Button1_Click(object sender, EventArgs e)
         {
             //添加
             if (TextBox1.Text == "")
@@ -37,8 +37,12 @@ namespace 排课系统.teacher
             {
                 WebMessageBox.Show("两次输入密码不一致"); return;
             }
-            Operation.runSql("update t_teacher set pwd='"+TextBox1.Text+"' where teachid='"+Session["teachid"].ToString()+"'");
+            ChangeSql(TextBox1.Text);
             WebMessageBox.Show("修改完成");
+        }
+        public void ChangeSql(String Pw1)
+        {
+            Operation.runSql("update t_teacher set pwd='" + Pw1 + "' where teachid='" + Session["teachid"].ToString() + "'");
         }
     }
 }

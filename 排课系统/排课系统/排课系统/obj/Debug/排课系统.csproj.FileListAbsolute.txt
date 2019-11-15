@@ -19,6 +19,6 @@ F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\bin\NPOI.dll
 F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\bin\NPOI.OOXML.dll
 F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\bin\NPOI.OpenXml4Net.dll
 F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\bin\NPOI.OpenXmlFormats.dll
-F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\obj\Debug\排课系统.csprojResolveAssemblyReference.cache
 F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\obj\Debug\排课系统.dll
 F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\obj\Debug\排课系统.pdb
+F:\GitRepos\EasySortCourse\排课系统\排课系统\排课系统\obj\Debug\排课系统.csprojResolveAssemblyReference.cache
