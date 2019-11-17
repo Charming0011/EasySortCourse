@@ -59,20 +59,20 @@ namespace 排课系统.admin
             {
                 WebMessageBox.Show("请输入有效的学分"); return;
             }
-            int tt=0,tt1=0,tt2=0;
-            if (!int.TryParse(TextBox5.Text,out tt))
+            int totalTime=0,eftTime=0,eftTime2=0;
+            if (!int.TryParse(TextBox5.Text,out totalTime))
             {
                 WebMessageBox.Show("请输入有效的总学时"); return;
             }
-            if (TextBox6.Text != "" && !int.TryParse(TextBox6.Text, out tt1))
+            if (TextBox6.Text != "" && !int.TryParse(TextBox6.Text, out eftTime))
             {
                 WebMessageBox.Show("请输入有效的讲授学时"); return;
             }
-            if (TextBox7.Text != "" && !int.TryParse(TextBox7.Text, out tt2))
+            if (TextBox7.Text != "" && !int.TryParse(TextBox7.Text, out eftTime2))
             {
                 WebMessageBox.Show("请输入有效的讲授学时"); return;
             }
-            if (tt2+tt1 > tt)
+            if (eftTime2+eftTime > totalTime)
             {
                 WebMessageBox.Show("总学时需要大于讲授学时与实验学时之和"); return;
             }
