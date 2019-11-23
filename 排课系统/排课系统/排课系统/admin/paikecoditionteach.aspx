@@ -76,7 +76,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.aspx">首页</a>
+            <div class="crumb-list"><i class="iconfont">&#xe602;&nbsp;</i><a href="index.aspx">首页</a>
             <span class="crumb-step">&gt;</span><a href="paikecodition.aspx">排课条件</a>
             <span class="crumb-step">&gt;</span><span class="crumb-name">教师条件</span></div>
         </div>

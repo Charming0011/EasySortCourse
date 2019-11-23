@@ -69,7 +69,7 @@
     <!--/sidebar-->
     <div class="main-wrap">
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.aspx">首页</a><span class="crumb-step">&gt;</span><a href="coursetask.aspx">教学任务</a><span class="crumb-step">&gt;</span><span class="crumb-name">新增任务</span></div>
+            <div class="crumb-list"><i class="iconfont">&#xe602;&nbsp;</i><a href="index.aspx">首页</a><span class="crumb-step">&gt;</span><a href="coursetask.aspx">教学任务</a><span class="crumb-step">&gt;</span><span class="crumb-name">新增任务</span></div>
         </div>
         <form id="login_form" runat="server">
         <div class="result-wrap">
