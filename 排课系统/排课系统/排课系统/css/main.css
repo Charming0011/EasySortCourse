@@ -1,18 +1,19 @@
 .sidebar-wrap{float: left;width: 189px;min-height:700px;background: #f2f2f2;border-right:1px solid #ccc;/*cursor:e-resize;*/}
 .main-wrap{margin-left: 190px;min-height:100%;}
-.sidebar-title{height: 40px;line-height: 40px;text-indent:1em;font-size: 24px;text-align: left;}
-.sidebar-title h1{font-weight: normal;}
-.sidebar-content{padding-top: 5px;}
+.sidebar-title{height: 40px;line-height: 40px;text-indent:1em;font-size: 24px;text-align: left;color:white;text-shadow:1px 1px 1px #000;}
+.sidebar-title h1{font-weight: normal;text-align:left;background:#3CB371;text-shadow:1px 1px 1px #000;}
+.sidebar-content{padding-top: 1px;}
 .sidebar-list li{border:1px solid #e5e5e5;border-width:1px 0;}
 .sidebar-list li .icon-font{margin-right: 5px;color: #888;font-size: 14px;}
 .sidebar-list li a{padding: 0 16px 0 20px;display: block;height: 38px;line-height: 38px;color: #333;}
-.sidebar-list li a:hover{background: #fff;color: #1963AA;}
+.sidebar-list li a:hover{background: #fff;color: #FFA500;}
 .sub-menu{border-top: 1px solid #e5e5e5;background: #fff;}
 .sub-menu li{padding-left: 21px;}
 .sub-menu li.on{background: #1963AA;}
 .sub-menu li.on a{background: #1963AA;color: #fff;}
 .sub-menu li.on .icon-font{color: #fff;}
 .sub-menu .icon-font{font-size: 11px;}
+
 /* main */
 .crumb-wrap{height: 40px;line-height: 39px;border-bottom: 1px solid #e5e5e5;background: #f5f5f5;}
 .crumb-list{padding-left: 12px;}
@@ -57,3 +58,19 @@
 .res-lab{color: #909090;}
 .res-info{font-size: 15px;}
 .sort-input{width: 25px;text-align: center;}
+@font-face {
+  font-family: 'iconfont';  /* project id 1512173 */
+  src: url('//at.alicdn.com/t/font_1512173_sxq19vzi1yr.eot');
+  src: url('//at.alicdn.com/t/font_1512173_sxq19vzi1yr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1512173_sxq19vzi1yr.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1512173_sxq19vzi1yr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1512173_sxq19vzi1yr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1512173_sxq19vzi1yr.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}

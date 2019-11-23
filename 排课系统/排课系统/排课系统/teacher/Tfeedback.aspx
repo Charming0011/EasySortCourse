@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../css/main.css"/>
     <script type="text/javascript" src="../Scripts/modernizr.min.js"></script>
+    <style type="text/css">li:hover #zhanshi{display: block;}#zhanshi{display: none;}</style>
+
 </head>
 <body>
     <div class="topbar-wrap white">
@@ -21,39 +23,40 @@
         </div>
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
+                 <li> <i class="iconfont">&#xe62a;&nbsp;</i></li>
                 <li> 
                     <asp:Label ID="Label1" runat="server" Text=""></asp:Label> </li>
-                <li><a href="../NewLogin.aspx">退出</a></li>
+                <li><a href="../NewLogin.aspx" ><font color="#FF000" >退出</font></a></li>
             </ul>
         </div>
     </div>
 </div>
-    <div class="container clearfix">
-        <div class="sidebar-wrap">
+ <div class="container clearfix">
+    <div class="sidebar-wrap">
         <div class="sidebar-title">
             <h1>菜单</h1>
         </div>
         <div class="sidebar-content">
             <ul class="sidebar-list">
                 <li>
-                    <a href="#"><i class="icon-font">&#xe003;</i>排课操作</a>
-                    <ul class="sub-menu">
-                        <li><a href="paikecodition.aspx"><i class="icon-font">&#xe008;</i>提交要求</a></li>
-                        <li><a href="coursetablemana.aspx"><i class="icon-font">&#xe006;</i>查看课表</a></li>
-                    </ul>
+                    <a href="#"><i class="iconfont">&#xe612;&nbsp;</i>排课操作</a>
+                    <ul class="sub-menu"><ul id="zhanshi">
+                        <li><a href="paikecodition.aspx"><i class="iconfont">&#xe6b5;&nbsp;</i>提交要求</a></li>
+                        <li><a href="coursetablemana.aspx"><i class="iconfont">&#xe60a;&nbsp;</i>查看课表</a></li>
+                    </ul></ul>
                 </li>
                 <li>
-                    <a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
-                    <ul class="sub-menu">
-                        <li><a href="info.aspx"><i class="icon-font">&#xe017;</i>个人信息</a></li>
-                        <li><a href="modifypwd.aspx"><i class="icon-font">&#xe017;</i>个人密码</a></li>
-                    </ul>
+                    <a href="#"><i class="iconfont">&#xe68d;&nbsp;</i>系统管理</a>
+                    <ul class="sub-menu"><ul id="zhanshi">
+                        <li><a href="info.aspx"><i class="iconfont">&#xe608;&nbsp;</i>个人信息</a></li>
+                        <li><a href="modifypwd.aspx"><i class="iconfont">&#xe6c0;&nbsp;</i>个人密码</a></li>
+                    </ul></ul>
                 </li>
                 <li>
-                    <a href="#"><i class="icon-font">&#xe018;</i>反馈系统</a>
-                    <ul class="sub-menu">
-                        <li><a href="Tfeedback.aspx"><i class="icon-font">&#xe017;</i>提交反馈</a></li>
-                        </ul>
+                    <a href="#"><i class="iconfont">&#xe601;&nbsp;</i>反馈系统</a>
+                    <ul class="sub-menu"><ul id="zhanshi">
+                        <li><a href="Tfeedback.aspx"><i class="iconfont">&#xe767;</i>提交反馈</a></li>
+                        </ul></ul>
                 </li>
             </ul>
         </div>
@@ -61,7 +64,7 @@
         <!--/sidebar-->
         <div class="main-wrap">
             <div class="crumb-wrap">
-                <div class="crumb-list"><i class="icon-font"></i><a href="index.aspx">首页</a>
+                <div class="crumb-list"><i class="iconfont">&#xe602;&nbsp;</i><a href="index.aspx">首页</a>
                     <span class="crumb-step">&gt;</span><span class="crumb-name">意见反馈</span>
                 </div>
                 </div>
