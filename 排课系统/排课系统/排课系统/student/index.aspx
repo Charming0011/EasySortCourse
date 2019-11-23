@@ -9,11 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../css/main.css"/>
     <script type="text/javascript" src="../Scripts/modernizr.min.js"></script>
+    <style type="text/css">li:hover #zhanshi{display: block;}#zhanshi{display: none;}</style>
 
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="topbar-wrap white">
+   <div class="topbar-wrap white">
         <div class="topbar-inner clearfix">
             <div class="topbar-logo-wrap clearfix">
                 <h1 class="topbar-logo none"><a href="index.aspx" class="navbar-brand">教师管理</a></h1>
@@ -23,9 +24,10 @@
                 </div>
             <div class="top-info-wrap">
                 <ul class="top-info-list clearfix">
+                    <li> <i class="iconfont">&#xe62a;&nbsp;</i></li>
                     <li>
                         <asp:Label ID="Label1" runat="server" Text=""></asp:Label> </li>
-                    <li><a href="../NewLogin.aspx">退出</a></li>
+                    <li><a href="../NewLogin.aspx"><font color="#FF000" >退出</font></a></li>
                     </ul>
                 </div>
             </div>
@@ -38,34 +40,29 @@
                 <div class="sidebar-content">
                     <ul class="sidebar-list">
                         <li>
-                        <a href="#"><i class="icon-font">&#xe003;</i>专业管理</a>
-                        <ul class="sub-menu">
-                            <!--选择院系后右伸展页展示该院系的专业名称-->
-                            <%--<li><a href="majormana.aspx"><i class="icon-font">&#xe008;</i></a></li>--%>
+                            <a href="#"><i class="iconfont">&#xe79a;&nbsp;</i>学生</a>
+                            <ul class="sub-menu"><ul id="zhanshi">
+                                <li><a href="#"><i class="iconfont">&#xe60e;&nbsp;</i>学生课表</a></li>
+                                <li><a href="#"><i class="iconfont">&#xe673;&nbsp;</i>培养方案</a></li></ul>
                             </ul>
                         </li>
-                    <li>
-                        <ul class="sub-menu">
-                            <li><a href="#"><i class="icon-font">&#xe052;</i>学生课表</a></li>
-                            <%--<li><a href="paikecodition.aspx"><i class="icon-font">&#xe008;</i>培养方案</a></li>--%>
+                        <li>
+                            <a href="#"><i class="iconfont">&#xe68d;&nbsp;</i>系统管理</a>
+                            <ul class="sub-menu"><ul id="zhanshi">
+                                <li><a href="information.aspx"><i class="iconfont">&#xe608;&nbsp;</i>个人信息</a></li>
+                                <li><a href="updatepwd.aspx"><i class="iconfont">&#xe6c0;&nbsp;</i>个人密码</a></li></ul>
                             </ul>
                         </li>
-                    <li>
-                        <a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
-                        <ul class="sub-menu">
-                            <li><a href="information.aspx"><i class="icon-font">&#xe017;</i>个人信息</a></li>
-                            <li><a href="updatepwd.aspx"><i class="icon-font">&#xe017;</i>个人密码</a></li>
+                         <li>
+                            <a href="#"><i class="iconfont">&#xe601;&nbsp;</i>反馈系统</a>
+                            <ul class="sub-menu"><ul id="zhanshi">
+                                <li><a href="feedback.aspx"><i class="iconfont">&#xe767;&nbsp;</i>提交反馈</a></li></ul>
                             </ul>
                         </li>
-                    <li>
-                        <a href="#"><i class="icon-font">&#xe018;</i>反馈系统</a>
-                        <ul class="sub-menu">
-                            <li><a href="feedback.aspx"><i class="icon-font">&#xe017;</i>提交反馈</a></li>
-                            </ul>
-                        </li>
-                        </ul>
-                    </div>
+                    </ul>
+                 </div>
                 </div>
+            <!--siderbar-->
             <div class="main-wrap">
                 <div class="crumb-wrap">
                     </div>

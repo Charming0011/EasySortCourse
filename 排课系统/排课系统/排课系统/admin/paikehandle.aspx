@@ -76,7 +76,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.aspx">首页</a><span class="crumb-step">&gt;</span>
+            <div class="crumb-list"><i class="iconfont">&#xe602;&nbsp;</i><a href="index.aspx">首页</a><span class="crumb-step">&gt;</span>
            <a href="paikemana.aspx">排课管理</a> <span class="crumb-step">&gt;</span>
             <span class="crumb-name">手动管理</span></div>
         </div>
