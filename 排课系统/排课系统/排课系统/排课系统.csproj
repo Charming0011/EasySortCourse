@@ -171,6 +171,7 @@
     <Content Include="NewLogin.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\caidan.js" />
     <Content Include="scripts\jquery-1.6.min.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery.js" />
