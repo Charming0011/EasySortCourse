@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../css/main.css"/>
     <script type="text/javascript" src="../Scripts/modernizr.min.js"></script>
-    <style type="text/css">li:hover #zhanshi{display: block;}#zhanshi{display: none;}</style>
+    <script type="text/javascript" src="../Scripts/caidan.js"></script>
+    <style type="text/css">   #sub_menu_1,#sub_menu_2,#sub_menu_3,#sub_menu_4{ display: none;  }  ul li:hover{  cursor: pointer; } </style>
 
 </head>
 <body>
@@ -39,30 +40,29 @@
         </div>
         <div class="sidebar-content">
             <ul class="sidebar-list">
-                <li>
+                <li onclick = "f('sub_menu_1')">
                     <a href="#"><i class="iconfont">&#xe612;&nbsp;</i>排课操作</a>
-                    <ul class="sub-menu"><ul id="zhanshi">
+                    <ul class="sub-menu" id="sub_menu_1" style="display:none">
                         <li><a href="paikecodition.aspx"><i class="iconfont">&#xe6b5;&nbsp;</i>提交要求</a></li>
                         <li><a href="coursetablemana.aspx"><i class="iconfont">&#xe60a;&nbsp;</i>查看课表</a></li>
-                    </ul></ul>
+                    </ul>
                 </li>
-                <li>
+                <li onclick = "f('sub_menu_2')">
                     <a href="#"><i class="iconfont">&#xe68d;&nbsp;</i>系统管理</a>
-                    <ul class="sub-menu"><ul id="zhanshi">
+                    <ul class="sub-menu" id="sub_menu_2" style="display:none">
                         <li><a href="info.aspx"><i class="iconfont">&#xe608;&nbsp;</i>个人信息</a></li>
                         <li><a href="modifypwd.aspx"><i class="iconfont">&#xe6c0;&nbsp;</i>个人密码</a></li>
-                    </ul></ul>
+                    </ul>
                 </li>
-                <li>
+                <li onclick = "f('sub_menu_3')">
                     <a href="#"><i class="iconfont">&#xe601;&nbsp;</i>反馈系统</a>
-                    <ul class="sub-menu"><ul id="zhanshi">
+                    <ul class="sub-menu" id="sub_menu_3" style="display:none">
                         <li><a href="Tfeedback.aspx"><i class="iconfont">&#xe767;</i>提交反馈</a></li>
-                        </ul></ul>
+                        </ul>
                 </li>
             </ul>
         </div>
-    </div>
-    <!--/sidebar-->
+    </div>    <!--/sidebar-->
     <!--/main-->
 
     

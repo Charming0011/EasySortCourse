@@ -7,6 +7,7 @@
 .sidebar-list li .icon-font{margin-right: 5px;color: #888;font-size: 14px;}
 .sidebar-list li a{padding: 0 16px 0 20px;display: block;height: 38px;line-height: 38px;color: #333;}
 .sidebar-list li a:hover{background: #fff;color: #FFA500;}
+.sidebar-list li a:active{color:#ea66a6;}
 .sub-menu{border-top: 1px solid #e5e5e5;background: #fff;}
 .sub-menu li{padding-left: 21px;}
 .sub-menu li.on{background: #1963AA;}
