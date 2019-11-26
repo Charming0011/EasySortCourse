@@ -25,26 +25,26 @@ namespace 排课系统.admin
         {
             if (!IsPostBack)
             {
-                if (Session["username"] == null)
-                {
+                if (Session["username"] == null)//用户名登录
                     WebMessageBox.Show("请登录", "../Default.aspx");
-                }else
+            } else
 
                 Label1.Text = Session["username"].ToString();
 
-                DataTable dt1 = Operation.getDatatable("select DISTINCT major from t_courseplan");
-                DropDownList1.DataSource = dt1;//设置数据源
-                DropDownList1.DataTextField = "major";//设置所要读取的数据表里的列名
-                DropDownList1.DataBind();//数据绑定
+            DataTable dt1 = Operation.getDatatable("select DISTINCT major from t_courseplan");//跳转到后台数据库
+            DropDownList1.DataSource = dt1;//设置数据源
+            DropDownList1.DataTextField = "major";//设置所要读取的数据表里的列名
+            DropDownList1.DataBind();//数据绑定
 
-                DataTable dt2 = Operation.getDatatable("select DISTINCT grade from t_courseplan");
-                DropDownList2.DataSource = dt2;//设置数据源
-                DropDownList2.DataTextField = "grade";//设置所要读取的数据表里的列名
-                DropDownList2.DataBind();//数据绑定
-                //绑定
-                bind();
-            }
+            DataTable dt2 = Operation.getDatatable("select DISTINCT grade from t_courseplan");
+            DropDownList2.DataSource = dt2;//设置数据源
+            DropDownList2.DataTextField = "grade";//设置所要读取的数据表里的列名
+            DropDownList2.DataBind();//数据绑定
+                                     //绑定
+            bind();
         }
+    }
+//设置导入数据库文件格式
         public void bind()
         {
             string sqlstr = "select * from t_courseplan where (coursename like '%" + this.findinfo.Text + "%' OR LEN('" + this.findinfo.Text + "')=0) and major='" +
@@ -72,7 +72,7 @@ namespace 排课系统.admin
             GridView1.EditIndex = e.NewEditIndex;
             bind();
         }
-
+    //依次输入学分、总学时、讲授学时、实验学时
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             float ss;
@@ -97,7 +97,7 @@ namespace 排课系统.admin
             }
             if (tt1 + tt2 > tt)
             {
-                WebMessageBox.Show("总学时需要大于讲授学时与实验学时之和"); return;
+                WebMessageBox.Show("总学时需要大于讲授学时与实验学时之和"); return;//设置符合客观事实的约束条件
             }
             Operation.runSql("update t_courseplan set coursename='" +((TextBox)(GridView1.Rows[e.RowIndex].Cells[1].Controls[0])).Text.ToString().Trim()+
                 "',khtype='" + ((TextBox)(GridView1.Rows[e.RowIndex].Cells[2].Controls[0])).Text.ToString().Trim() +
@@ -224,4 +224,3 @@ namespace 排课系统.admin
 
         }
     }
-}
