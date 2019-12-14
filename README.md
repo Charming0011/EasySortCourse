@@ -1,5 +1,5 @@
-# EasySortCourse
-## This is for King of SWPU group, finishing their course project  
+# 易奇排排课系统
+## 西柚排课王团队完成系统分析与设计课程的结课项目 
 <font size=3>
 项目说明：
   实现功能： 服务于三种角色，每个用户端的功能基本完成，有时候会有意想不到的bug，但是应该不影响程序安全性。  
